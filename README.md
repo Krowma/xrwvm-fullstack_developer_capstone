@@ -7,4 +7,4 @@ The goal of this project is to develop a car dealership website with a dealershi
 - For the dealership review service we use an Express server with MongoDB to store the reviews.
 - Both the app and the review service will be deployed using Docker and Kubernetes.
 
-For more informations see [IBM Full Stack Software Developer Professional Certificate]([https://www.github.com](https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer) 
+For more informations see [IBM Full Stack Software Developer Professional Certificate](https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer) 
