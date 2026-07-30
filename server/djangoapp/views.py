@@ -96,7 +96,7 @@ def get_dealerships(request, state="All"):
     return JsonResponse({"status": 200, "dealers": dealerships})
 
 
-def get_dealer_reviews(request,dealer_id):
+def get_dealer_reviews(request, dealer_id):
     if (dealer_id):
         endpoint = "/fetchReviews/dealer/"+str(dealer_id)
         reviews = get_request(endpoint)
