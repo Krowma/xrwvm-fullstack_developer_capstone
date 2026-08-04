@@ -41,6 +41,12 @@ img{
   padding:5px;
 }
 
+.job-title{
+  font-size: 20px;
+  font-weight: bold;
+  padding-left:5px;
+}
+
 .homepage_links{
   color:  rgb(97, 64, 128);
   padding: 25%;
@@ -87,7 +93,7 @@ img{
 .nav_item{
   margin-left:15px;
   font-size: 20px;
-  color: black;
+  color: rgb(255, 255, 255);
   align-self: center;
 }
 
@@ -123,4 +129,12 @@ img{
     border-radius:50px;
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;    /* Thickness of the line */
+  text-underline-offset: 4px;        /* Distance from text */
+  text-decoration-color: #c38080;
+  font-weight: bold;
 }

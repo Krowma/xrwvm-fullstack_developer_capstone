@@ -61,23 +61,21 @@ const Dealer = () => {
     get_reviews();
     if(sessionStorage.getItem("username")) {
       setPostReview(<a href={post_review}><img src={review_icon} style={{width:'10%',marginLeft:'10px',marginTop:'10px'}} alt='Post Review'/></a>)
-
-      
     }
   },[]);  
 
 
 return(
-  <div style={{margin:"20px"}}>
+  <div>
       <Header/>
-      <div style={{marginTop:"10px"}}>
+      <div style={{marginTop:"10px", margin:"20px"}}>
       <h1 style={{color:"grey"}}>{dealer.full_name}{postReview}</h1>
       <h4  style={{color:"grey"}}>{dealer['city']},{dealer['address']}, Zip - {dealer['zip']}, {dealer['state']} </h4>
       </div>
-      <div class="reviews_panel">
+      <div class="reviews_panel" style={{marginTop:"10px",}}>
       {reviews.length === 0 && unreviewed === false ? (
         <text>Loading Reviews....</text>
-      ):  unreviewed === true? <div>No reviews yet! </div> :
+      ):  unreviewed === true? <div style={{marginLeft:"20px"}}>No reviews yet! </div> :
       reviews.map(review => (
         <div className='review_panel'>
           <img src={senti_icon(review.sentiment)} className="emotion_icon" alt='Sentiment'/>

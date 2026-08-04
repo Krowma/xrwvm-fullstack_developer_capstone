@@ -52,10 +52,10 @@ const Register = () => {
   return(
     <div className="register_container" style={{width: "50%"}}>
       <div className="header" style={{display: "flex",flexDirection: "row", justifyContent: "space-between"}}>
-          <span className="text" style={{flexGrow:"1"}}>SignUp</span> 
+          <span className="text" style={{flexGrow:"1", color:"black"}}>SignUp</span> 
           <div style={{display: "flex",flexDirection: "row", justifySelf: "end", alignSelf: "start" }}>
-          <a href="/" onClick={()=>{gohome()}} style={{justifyContent: "space-between", alignItems:"flex-end"}}>
-            <img style={{width:"1cm"}} src={close_icon} alt="X"/>
+          <a href="/" onClick={()=>{gohome()}} style={{justifyContent: "space-between", alignItems:"flex-end", color: "black", textDecoration: "none"}}>
+            <text>X</text>
           </a>
           </div>
           <hr/>
