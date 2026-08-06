@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 const express = require('express');
 const mongoose = require('mongoose');
 const fs = require('fs');
@@ -30,7 +31,34 @@ app.get('/', async (req, res) => {
 
 app.get('/cars', async (req, res) => {
     try {
-        const results = await Cars.find();
+        const { id, make, model, year, mileage, price } = req.query; 
+        let filter = {};
+        
+        if(id) {
+            filter.dealer_id = id;
+        }
+
+        if(make) {
+            filter.make = make;
+        }
+
+        if(model) {
+            filter.model = model;
+        }
+
+        if(year) {
+            filter.year = {$gte : year};
+        }
+
+        if(mileage) {
+            filter.mileage = {$lte : mileage};
+        }
+
+        if(price) {
+            filter.price = {$lte : price};
+        }
+
+        const results = await Cars.find(filter);
         res.json(results);
     } catch (error) {
         res.status(500).json({ error: 'Error fetching cars' });
