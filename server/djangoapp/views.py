@@ -139,8 +139,13 @@ def get_inventory(request, dealer_id):
     data = request.GET
     endpoint = "/cars/"+str(dealer_id)
     if (dealer_id):
-        cars = searchcars_request("/cars", data)
+        cars = searchcars_request(endpoint)
         return JsonResponse({"status": 200, "cars": cars})
-    else:
-        return JsonResponse({"status": 400, "message": "Bad Request"})
+
     return JsonResponse({"status": 400, "message": "Bad Request"})
+
+
+def search_inventory(request):
+    data = dict(request.GET)
+    cars = searchcars_request("/cars", **data)
+    return JsonResponse({"status": 200, "cars": cars})

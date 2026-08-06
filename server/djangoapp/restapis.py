@@ -1,6 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
+from urllib.parse import urlencode
 
 load_dotenv()
 
@@ -35,7 +36,7 @@ def searchcars_request(endpoint, **kwargs):
     params = ""
     if (kwargs):
         for key, value in kwargs.items():
-            params = params+key+"="+value+"&"
+            params = params+key+"="+value[0]+"&"
 
     request_url = searchcars_url+endpoint+"?"+params
 
