@@ -5,6 +5,11 @@ on:
     branches: [master, main]
   pull_request:
     branches: [master, main]
+  workflow_dispatch:
+    inputs:
+      reason:
+        required: false
+        default: 'Manual test'
 
 jobs:
   lint_python:
